@@ -16,8 +16,7 @@ First, create a virtual enviroment.
 ```
 python -m venv .venv
 ```
-
-Then, install the dependencies.
+Activate the newly created virtual enviroment. Then, install the dependencies.
 
 ```
 pip install -r requirements.txt
