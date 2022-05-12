@@ -32,3 +32,7 @@ uvicorn main:app --reload
 ## API Documentation
 
 *pending*
+
+## Client
+
+The client code is available in [PKGaspi/LDDB-client](https://github.com/PKGaspi/LDDB-client).
