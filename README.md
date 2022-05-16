@@ -8,6 +8,7 @@ share their own. Access to those dances can be done through a REST API.
 - [SQLAlchemy](https://www.sqlalchemy.org/)
 - [FastAPI](https://fastapi.tiangolo.com/)
 - [Uvicorn](uvicorn.org)
+- [Python-multipart](https://andrew-d.github.io/python-multipart/)
 
 ## Setup
 
