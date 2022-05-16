@@ -12,21 +12,29 @@ share their own. Access to those dances can be done through a REST API.
 
 ## Setup
 
-First, create a virtual enviroment.
+First, make sure to use python 3.10+.
 
+```console
+$ python --version
+Python 3.10.4
 ```
-python -m venv .venv
+
+
+Then, create a virtual enviroment.
+
+```console
+$ python -m venv .venv
 ```
 Activate the newly created virtual enviroment. Then, install the dependencies.
 
-```
-pip install -r requirements.txt
+```console
+$ pip install -r requirements.txt
 ```
 
 ## Run
 
 ```
-uvicorn main:app --reload
+uvicorn app.main:app --reload
 ```
 
 ## API Documentation
