@@ -1,6 +1,8 @@
 import uuid
 from fastapi import APIRouter
 
+from ..models.songs import Song
+
 router = APIRouter()
 
 
@@ -9,7 +11,7 @@ async def song_list():
     return {"song_list": [{"id": uuid.uuid4(), "name": "test", "author": "gaspi"}, {"id": uuid.uuid4(), "name": "test2"}]}
 
 @router.post("/song")
-async def post_song(song):
+async def post_song(song: Song):
     return {"status": "ok"}
 
 @router.get("/song/{song_id}")
