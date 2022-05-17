@@ -5,11 +5,15 @@ share their own. Access to those dances can be done through a REST API.
 
 ## Dependencies
 
+Runtime dependencies:
 - [SQLAlchemy](https://www.sqlalchemy.org/)
 - [FastAPI](https://fastapi.tiangolo.com/)
 - [Uvicorn](uvicorn.org)
 - [Python-multipart](https://andrew-d.github.io/python-multipart/)
 - [Python-dotenv](https://pypi.org/project/python-dotenv/)
+
+For DB migrations and development only:
+- [Alembic](https://alembic.sqlalchemy.org/en/latest/)
 
 ## Setup
 
