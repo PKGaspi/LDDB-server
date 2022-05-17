@@ -1,16 +1,21 @@
 from pydantic import BaseModel, Field
 import datetime, uuid
 
-from lddb.core.schemas.song import Song
+from . import song, user
 
-class DanceCreate(BaseModel):
+class DanceBase(BaseModel):
     name: str
-    author: str
+    creator: user.User
     file: str
-    song_id: uuid.UUID
+    song: song.Song
+
+class DanceCreate(DanceBase):
+    pass
 
 class Dance(DanceCreate):
-    id: uuid.UUID
-    created_at: datetime.datetime = Field(defualt=datetime.datetime.now())
+    id: uuid.UUID = Field(default=uuid.uuid4)
     n_downloads: int = 0
+
+    class Config():
+        orm_mode = True
 

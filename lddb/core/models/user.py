@@ -8,4 +8,3 @@ class User(Base):
     __tablename__ = "users"
     
     username = Column(String, nullable=False)
-    dances = relationship("Dance", back_populates="creator")

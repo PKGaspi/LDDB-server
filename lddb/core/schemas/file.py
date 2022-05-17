@@ -1,16 +1,15 @@
 from pydantic import BaseModel, Field
 import datetime, uuid
 
-class SongBase(BaseModel):
-    name: str
-    author: str
+class FileBase(BaseModel):
+    filename: str
 
-class SongCreate(SongBase):
+class FileCreate(FileBase):
     pass
 
-class Song(SongCreate):
+class File(FileCreate):
     id: uuid.UUID = Field(default=uuid.uuid4)
-    file: bytes
 
     class Config():
         orm_mode = True
+
