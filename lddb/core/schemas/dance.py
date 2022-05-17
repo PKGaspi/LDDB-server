@@ -3,11 +3,14 @@ import datetime, uuid
 
 from lddb.core.schemas.song import Song
 
-class Dance(BaseModel):
+class DanceCreate(BaseModel):
     name: str
     author: str
-    upload_timestamp: datetime.datetime = Field(defualt=datetime.datetime.now())
     file: str
-    n_downloads: int = 0
     song_id: uuid.UUID
+
+class Dance(DanceCreate):
+    id: uuid.UUID
+    created_at: datetime.datetime = Field(defualt=datetime.datetime.now())
+    n_downloads: int = 0
 
