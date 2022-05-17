@@ -7,4 +7,3 @@ class Song(BaseModel):
     upload_timestamp: datetime.datetime = Field(defualt=datetime.datetime.now())
     file: bytes
 
-

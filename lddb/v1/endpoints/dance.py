@@ -1,7 +1,7 @@
 import uuid
 from fastapi import APIRouter, File
 
-from ..models.dances import Dance
+from lddb.core.schemas.dance import Dance
 
 router = APIRouter()
 

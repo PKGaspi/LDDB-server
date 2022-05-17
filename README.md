@@ -9,6 +9,7 @@ share their own. Access to those dances can be done through a REST API.
 - [FastAPI](https://fastapi.tiangolo.com/)
 - [Uvicorn](uvicorn.org)
 - [Python-multipart](https://andrew-d.github.io/python-multipart/)
+- [Python-dotenv](https://pypi.org/project/python-dotenv/)
 
 ## Setup
 
@@ -34,7 +35,7 @@ $ pip install -r requirements.txt
 ## Run
 
 ```
-uvicorn app.main:app --reload
+uvicorn lddb.main:app --reload
 ```
 
 ## API Documentation

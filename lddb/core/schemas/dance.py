@@ -1,7 +1,7 @@
 from pydantic import BaseModel, Field
 import datetime, uuid
 
-from .songs import Song
+from lddb.core.schemas.song import Song
 
 class Dance(BaseModel):
     name: str
@@ -10,5 +10,4 @@ class Dance(BaseModel):
     file: str
     n_downloads: int = 0
     song_id: uuid.UUID
-
 

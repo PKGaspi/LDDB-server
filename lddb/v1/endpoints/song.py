@@ -1,7 +1,7 @@
 import uuid
 from fastapi import APIRouter, UploadFile
 
-from ..models.songs import Song
+from lddb.core.schemas.song import Song
 
 router = APIRouter()
 
