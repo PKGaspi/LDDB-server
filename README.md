@@ -5,14 +5,15 @@ share their own. Access to those dances can be done through a REST API.
 
 ## Dependencies
 
-Runtime dependencies:
+Python modules for runtime:
 - [SQLAlchemy](https://www.sqlalchemy.org/)
 - [FastAPI](https://fastapi.tiangolo.com/)
 - [Uvicorn](uvicorn.org)
 - [Python-multipart](https://andrew-d.github.io/python-multipart/)
 - [Python-dotenv](https://pypi.org/project/python-dotenv/)
+- [Psycopg2](https://pypi.org/project/psycopg2/)
 
-For DB migrations and development only:
+Python modules for development:
 - [Alembic](https://alembic.sqlalchemy.org/en/latest/)
 
 ## Setup
@@ -36,6 +37,13 @@ Activate the newly created virtual enviroment. Then, install the dependencies.
 $ pip install -r requirements.txt
 ```
 
+Finally, setup a `.env` file with the following or similar structure.
+```
+MEDIA_PATH="${HOME}/lddb"
+DB_URL="postgresql+psycopg2://lddb@localhost/lddb_db"
+DANCES_PATH="${MEDIA_PATH}/dances"
+SONGS_PATH="${MEDIA_PATH}/songs"
+```
 ## Run
 
 ```
