@@ -10,13 +10,6 @@ from lddb.core.database import get_db
 router = APIRouter()
 
 
-@router.get("/user_list")
-async def user_list(db: Session = Depends(get_db)):
-    results = UserServices.get_user_list(db)
-    return {"code": 200,
-            "list": [User.from_orm(obj).dict() for obj in results]
-    }
-
 @router.post("/user")
 async def post_user(obj: UserCreate, db: Session = Depends(get_db)):
     db_obj = UserServices.add_user(db, obj)
@@ -34,8 +27,10 @@ async def get_user(obj_id: uuid.UUID, db: Session = Depends(get_db)):
     return {"code": 200,
             "obj": User.from_orm(db_obj).dict()
     }
-    
 
-# @app.get("/dance/{dance_id}/scores")
-# async def get_dance_scores(dance_id: uuid.UUID):
-#     return {"id": dance_id}
+@router.get("/user_list")
+async def user_list(db: Session = Depends(get_db)):
+    results = UserServices.get_user_list(db)
+    return {"code": 200,
+            "list": [User.from_orm(obj).dict() for obj in results]
+    }
