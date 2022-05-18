@@ -5,7 +5,7 @@ from sqlalchemy.dialects.postgresql import UUID
 
 from lddb.core.database import Base
 
-from . import song_author, file
+from . import song_author
 
 class Song(Base):
     __tablename__ = "songs"

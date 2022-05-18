@@ -8,7 +8,7 @@ class SongAuthorCreate(SongAuthorBase):
     pass
 
 class SongAuthor(SongAuthorCreate):
-    id: uuid.UUID = Field(default=uuid.uuid4())
+    id: uuid.UUID
 
     class Config():
         orm_mode = True

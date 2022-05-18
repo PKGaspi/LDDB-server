@@ -11,7 +11,7 @@ class SongCreate(SongBase):
     author_id: uuid.UUID
 
 class Song(SongBase):
-    id: uuid.UUID = Field(default=uuid.uuid4())
+    id: uuid.UUID
     author: song_author.SongAuthor
 
     class Config():

@@ -18,9 +18,9 @@ class DanceCreate(DanceBase):
         # TODO: parse file looking for errors
         return v # assume ok
 
-class Dance(DanceCreate):
-    id: uuid.UUID = Field(default=uuid.uuid4())
-    n_downloads: int = 0
+class Dance(DanceBase):
+    id: uuid.UUID
+    downloads_count: int
     creator: user.User
     song: song.Song
 

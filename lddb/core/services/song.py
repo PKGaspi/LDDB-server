@@ -13,7 +13,6 @@ def get_song_list(db: Session):
 
 def add_song(db: Session, song: SongCreate):
     filename = str(uuid.uuid4()) + ".wav"
-
     db_song = SongModel(
         name = song.name,
         author_id = song.author_id,

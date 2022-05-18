@@ -8,7 +8,7 @@ class UserCreate(UserBase):
     pass
 
 class User(UserCreate):
-    id: uuid.UUID = Field(default=uuid.uuid4())
+    id: uuid.UUID
 
     class Config():
         orm_mode = True

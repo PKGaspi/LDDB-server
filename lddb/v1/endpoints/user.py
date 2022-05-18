@@ -11,26 +11,32 @@ router = APIRouter()
 
 
 @router.post("/user")
-async def post_user(obj: UserCreate, db: Session = Depends(get_db)):
-    db_obj = UserServices.add_user(db, obj)
-    return {"code": 200,
-            "obj": User.from_orm(db_obj).dict()
+async def post_user(user: UserCreate, db: Session = Depends(get_db)):
+    db_user = UserServices.add_user(db, user)
+    return {
+        "code": 200,
+        "user": User.from_orm(db_user).dict()
     }
 
 @router.get("/user/{user_id}")
-async def get_user(obj_id: uuid.UUID, db: Session = Depends(get_db)):
-    db_obj = UserServices.get_user(db, obj_id)
+async def get_user(user_id: uuid.UUID, db: Session = Depends(get_db)):
+    db_user = UserServices.get_user(db, user_id)
     
-    if db_obj == None:
-        return {"code": 404, "msg": "Object not found"}
+    if db_user == None:
+        return {
+            "code": 404, 
+            "msg": "Object not found"
+        }
 
-    return {"code": 200,
-            "obj": User.from_orm(db_obj).dict()
+    return {
+        "code": 200,
+        "user": User.from_orm(db_user).dict()
     }
 
 @router.get("/user_list")
 async def user_list(db: Session = Depends(get_db)):
     results = UserServices.get_user_list(db)
-    return {"code": 200,
-            "list": [User.from_orm(obj).dict() for obj in results]
+    return {
+        "code": 200,
+        "list": [User.from_orm(user).dict() for user in results]
     }

@@ -8,8 +8,8 @@ class FileCreate(FileBase):
     pass
 
 class File(FileCreate):
-    id: uuid.UUID = Field(default=uuid.uuid4)
-
+    id: uuid.UUID
+    
     class Config():
         orm_mode = True
 
