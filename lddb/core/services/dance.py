@@ -12,13 +12,15 @@ def get_dance_list(db: Session):
 
 def add_dance(db: Session, dance: schemas.dance.DanceCreate):
     print(dance)
-    dance = schemas.dance.Dance(dance)
-    print(dance)
+    filename = uuid.uuid4() + ".dnc"
+    file = io.open(os.path.join(os.getenv("DANCES_PATH"), filename), "wb")
+    f.write(dance.data)
+    f.close()
     db_dance = models.dance.Dance(
-        id = dance.id,
         name = dance.name,
-        creator = dance.creator,
-        song = schemas.song.Song(db.query(models.song.Song).get(dance.song.id))
+        creator_id = dance.creator_id,
+        song_id = dance.song_id,
+        filename = filename,
     )
     db.add(db_dance)
     db.commit()

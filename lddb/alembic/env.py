@@ -11,7 +11,7 @@ from alembic import context
 
 from lddb.core.database import Base
 from lddb.core.models import (
-    file, song, song_author, dance, user
+    song, song_author, dance, user
 )
 
 load_dotenv()

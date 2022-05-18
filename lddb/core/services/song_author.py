@@ -12,9 +12,7 @@ def get_song_author_list(db: Session):
     return db.query(SongAuthorModel).all()
 
 def add_song_author(db: Session, obj: SongAuthorCreate):
-    print(obj)
     db_obj = SongAuthorModel(
-        id=uuid.uuid4(),
         name=obj.name,
     )
     db.add(db_obj)

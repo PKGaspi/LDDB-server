@@ -13,6 +13,5 @@ class Dance(Base):
     creator = relationship("User", backref="dances")
     song_id = Column(UUID(as_uuid=True), ForeignKey(song.Song.id))
     song = relationship("Song", backref="dances")
-    file_id = Column(UUID(as_uuid=True), ForeignKey(file.File.id))
-    file = relationship("File", backref="content")
+    filename = Column(String, nullable=False)
     downloads_count = Column(Integer, nullable=False, default=0)

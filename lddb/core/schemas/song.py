@@ -5,13 +5,14 @@ from . import song_author
 
 class SongBase(BaseModel):
     name: str
-    author: song_author.SongAuthor
 
 class SongCreate(SongBase):
     data: bytes
+    author_id: uuid.UUID
 
-class Song(SongCreate):
+class Song(SongBase):
     id: uuid.UUID = Field(default=uuid.uuid4())
+    author: song_author.SongAuthor
 
     class Config():
         orm_mode = True
