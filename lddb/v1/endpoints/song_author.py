@@ -11,9 +11,11 @@ router = APIRouter()
 
 
 @router.get("/song_author_list")
-async def song_author_list():
-    # TODO
-    return {"song_author_list": [{"id": uuid.uuid4(), "name": "test", "author": "gaspi"}, {"id": uuid.uuid4(), "name": "test2"}]}
+async def song_author_list(db: Session = Depends(get_db)):
+    results = SongAuthorServices.get_song_author_list(db)
+    return {"code": 200,
+            "list": [SongAuthor.from_orm(obj).dict() for obj in results]
+    }
 
 @router.post("/song_author")
 async def post_song_author(obj: SongAuthorCreate, db: Session = Depends(get_db)):
