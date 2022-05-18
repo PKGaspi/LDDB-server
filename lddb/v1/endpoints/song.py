@@ -12,15 +12,10 @@ async def song_list():
     return {"song_list": [{"id": uuid.uuid4(), "name": "test", "author": "gaspi"}, {"id": uuid.uuid4(), "name": "test2"}]}
 
 @router.post("/song")
-async def post_song(song: SongCreate):
+async def post_song(song: SongCreate, file: UploadFile):
     # TODO
     
     return {"status": "ok"}
-
-@router.post("/song_file")
-async def post_song_file(file: UploadFile):
-    # TODO
-    return {"id": uuid.uuid4()}
 
 @router.get("/song/{song_id}")
 async def get_song(song_id: uuid.UUID):

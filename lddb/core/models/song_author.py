@@ -8,4 +8,3 @@ class SongAuthor(Base):
     __tablename__ = "song_authors"
     
     name = Column(String, nullable=False)
-    songs = relationship("Song", back_populates="author")

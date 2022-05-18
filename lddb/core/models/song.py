@@ -11,6 +11,6 @@ class Song(Base):
 
     name = Column(String, nullable=False)
     author_id = Column(String(36), ForeignKey(song_author.SongAuthor.id))
-    author = relationship("User", backref="dances")
+    author = relationship("SongAuthor", backref="songs")
     file_id = Column(String(36), ForeignKey(file.File.id))
     file = relationship("File", backref="content")
