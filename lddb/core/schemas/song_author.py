@@ -8,6 +8,8 @@ class SongAuthorCreate(SongAuthorBase):
     pass
 
 class SongAuthor(SongAuthorCreate):
+    created_at: datetime.datetime
+    modified_at: datetime.datetime
     id: uuid.UUID
 
     class Config():

@@ -11,8 +11,10 @@ class SongCreate(SongBase):
     author_id: uuid.UUID
 
 class Song(SongBase):
-    id: uuid.UUID
     author: song_author.SongAuthor
+    created_at: datetime.datetime
+    modified_at: datetime.datetime
+    id: uuid.UUID
 
     class Config():
         orm_mode = True

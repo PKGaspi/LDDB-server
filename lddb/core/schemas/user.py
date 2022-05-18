@@ -8,6 +8,8 @@ class UserCreate(UserBase):
     pass
 
 class User(UserCreate):
+    created_at: datetime.datetime
+    modified_at: datetime.datetime
     id: uuid.UUID
 
     class Config():

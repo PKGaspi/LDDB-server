@@ -19,10 +19,12 @@ class DanceCreate(DanceBase):
         return v # assume ok
 
 class Dance(DanceBase):
-    id: uuid.UUID
     downloads_count: int
     creator: user.User
     song: song.Song
+    created_at: datetime.datetime
+    modified_at: datetime.datetime
+    id: uuid.UUID
 
     class Config():
         orm_mode = True
