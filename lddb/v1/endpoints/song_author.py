@@ -25,6 +25,10 @@ async def post_song_author(obj: SongAuthorCreate, db: Session = Depends(get_db))
 @router.get("/song_author/{song_author_id}")
 async def get_song_author(obj_id: uuid.UUID, db: Session = Depends(get_db)):
     db_obj = SongAuthorServices.get_song_author(db, obj_id)
+    
+    if db_obj == None:
+        return {"code": 404, "msg": "Object not found"}
+
     return {"code": 200,
             "obj": SongAuthor.from_orm(db_obj).dict()
     }
