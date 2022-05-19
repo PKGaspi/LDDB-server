@@ -10,11 +10,11 @@ load_dotenv()
 
 app = FastAPI()
 
-
 app.include_router(dance.router)
 app.include_router(song.router)
 app.include_router(song_author.router)
 app.include_router(user.router)
+
 
 @app.get("/")
 async def root():
@@ -22,5 +22,9 @@ async def root():
 
 @app.get("/status")
 async def status():
-    return {"status": "ok", "version": "1.0"}
+    return {
+        "code": 200,
+        "status": "up and running",
+        "version": 1
+    }
 
