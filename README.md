@@ -13,7 +13,7 @@ Python modules for runtime:
 - [Python-dotenv](https://pypi.org/project/python-dotenv/)
 - [Psycopg2](https://pypi.org/project/psycopg2/)
 
-Python modules for development:
+Python modules for development and deployment:
 - [Alembic](https://alembic.sqlalchemy.org/en/latest/)
 
 ## Setup
@@ -31,13 +31,16 @@ Then, create a virtual enviroment.
 ```console
 $ python -m venv .venv
 ```
+
 Activate the newly created virtual enviroment. Then, install the dependencies.
 
 ```console
 $ pip install -r requirements.txt
 ```
 
-Finally, setup a `.env` file with the following or similar structure.
+You have to setup a postgresql server.
+Finally, write a `.env` file with the following or similar structure.
+
 ```
 MEDIA_PATH="${HOME}/lddb"
 DB_URL="postgresql+psycopg2://lddb@localhost/lddb_db"
@@ -47,12 +50,13 @@ SONGS_PATH="${MEDIA_PATH}/songs"
 ## Run
 
 ```
-uvicorn lddb.main:app --reload
+uvicorn lddb.main:app
 ```
 
 ## API Documentation
 
-*pending*
+*pending*  
+For now, visit `/docs` when runing the server.
 
 ## Client
 
