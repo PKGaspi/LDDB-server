@@ -2,7 +2,7 @@ import uuid, os
 from dotenv import load_dotenv
 from fastapi import FastAPI
 
-from lddb.v1.endpoints import dance, song, song_author, user
+from lddb.api.v1.endpoints import dance, song, song_author, user
 # song_authorfrom lddb.core.database import SessionLocal, engine, Base
 
 
