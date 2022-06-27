@@ -3,7 +3,6 @@ from dotenv import load_dotenv
 from fastapi import FastAPI
 
 from lddb.api.v1.endpoints import dance, song, song_author, user
-# song_authorfrom lddb.core.database import SessionLocal, engine, Base
 
 
 load_dotenv()
@@ -14,11 +13,6 @@ app.include_router(dance.router)
 app.include_router(song.router)
 app.include_router(song_author.router)
 app.include_router(user.router)
-
-
-@app.get("/")
-async def root():
-    return {"message": "Hello World"}
 
 @app.get("/status")
 async def status():
